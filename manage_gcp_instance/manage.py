@@ -6,24 +6,34 @@ def start_instance(data, compute):
     zone = data['zone']
     instance = data['instance']
 
-    return compute.start(project=project, zone=zone, instance=instance).execute()
+    return compute.instances().start(project=project, zone=zone, instance=instance).execute()
 
 def stop_instance(data, compute):
     project = data['project']
     zone = data['zone']
     instance = data['instance']
 
-    return compute.stop(project=project, zone=zone, instance=instance).execute()
+    return compute.instances().stop(project=project, zone=zone, instance=instance).execute()
 
 def delete_instance(data, compute):
     project = data['project']
     zone = data['zone']
     instance = data['instance']
 
-    return compute.delete(project=project, zone=zone, instance=instance).execute()
+    return compute.instances().delete(project=project, zone=zone, instance=instance).execute()
+
+def create_config(data):
+    config = 
 
 def create_instance(data, compute):
     pass
+
+# def create_instance(data, compute):
+#     project = data['project']
+#     zone = data['zone']
+#     instance = data['instance']
+
+#     return compute.insert(project=project, zone=zone, instance=instance).execute()
 
 # def create_instance(data):
 #     project = message['project']
@@ -105,7 +115,7 @@ def create_instance(data, compute):
 #         body=config).execute())
 
 def manage_instance(data):
-    compute = googleapiclient.discovery.build('compute', 'v1').instances()
+    compute = googleapiclient.discovery.build('compute', 'v1')
     return {
         'start': start_instance,
         'stop': stop_instance,
