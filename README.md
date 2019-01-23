@@ -21,7 +21,7 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
     "zone": "asia-south1-c",
     "config": {
         "name": "instance-2",
-        "machineType": "zones/asia-south1-c/machineTypes/f1-micro",
+        "machineType": "machineTypes/f1-micro",
 
         "disks": [
             {
