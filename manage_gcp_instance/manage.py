@@ -1,22 +1,6 @@
 import json
 import googleapiclient.discovery
 
-'''
-Sample Request JSON Definition: 
-"data" : {
-    "action": "start|stop|create|delete",
-    "project": "athenas-owl-dev"
-    "zone": "us-central1-a",
-    "instance": "i-ao-something",
-    "size": "f1-micro",
-    "image-project": "ubuntu-os-cloud",
-    "image_family": "ubuntu-1604-lts"
-    "metadata":
-    {
-    }
-}
-'''
-
 def start_instance(data, compute):
     project = data['project']
     zone = data['zone']
