@@ -17,11 +17,11 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
 ```json
 {
     "action": "create",
-    "project": "project-name",
-    "zone": "us-central1-a",
+    "project": "quantiphi-rtc",
+    "zone": "asia-south1-c",
     "config": {
-        "name": "instance_name",
-        "machineType": "zones/asia-south1-c/machineTypes/n1-standard-1",
+        "name": "instance-2",
+        "machineType": "zones/asia-south1-c/machineTypes/f1-micro",
 
         "disks": [
             {
@@ -39,19 +39,10 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
                 {"type": "ONE_TO_ONE_NAT", "name": "External NAT"}
             ]
         }],
-
-        "serviceAccounts": [{
-            "email": "default",
-            "scopes": [
-                "https://www.googleapis.com/auth/devstorage.read_write"
-            ]
-        }],
+        
         
         "metadata": {
             "items": [{
-                "key": "startup-script",
-                "value": "cd ~ && touch mast_file"
-            }, {
                 "key": "office-time",
                 "value": "mumbai-12"
             }, {
@@ -63,6 +54,5 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
             }]
         }
     }
-
 }
 ```
