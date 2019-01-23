@@ -23,7 +23,6 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
         "name": "instance_name",
         "machineType": "zones/asia-south1-c/machineTypes/n1-standard-1",
 
-        // Specify the boot disk and the image to use as a source.
         "disks": [
             {
                 "boot": "true",
@@ -34,7 +33,6 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
             }
         ],
 
-        // Specify a network interface with NAT to access the public internet.
         "networkInterfaces": [{
             "network": "global/networks/default",
             "accessConfigs": [
@@ -42,20 +40,15 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
             ]
         }],
 
-        // Allow the instance to access cloud storage and logging.
         "serviceAccounts": [{
             "email": "default",
             "scopes": [
                 "https://www.googleapis.com/auth/devstorage.read_write"
             ]
         }],
-
-        // Metadata is readable from the instance and allows you to
-        // pass configuration from deployment scripts to instances.
+        
         "metadata": {
             "items": [{
-                // Startup script is automatically executed by the
-                // instance upon startup.
                 "key": "startup-script",
                 "value": "cd ~ && touch mast_file"
             }, {
