@@ -18,7 +18,6 @@ Sample Request JSON Definition:
 '''
 
 def start_instance(data, compute):
-    print("start")
     project = data['project']
     zone = data['zone']
     instance = data['instance']
@@ -26,7 +25,6 @@ def start_instance(data, compute):
     return compute.start(project=project, zone=zone, instance=instance).execute()
 
 def stop_instance(data, compute):
-    print("stop")
     project = data['project']
     zone = data['zone']
     instance = data['instance']
@@ -34,7 +32,6 @@ def stop_instance(data, compute):
     return compute.stop(project=project, zone=zone, instance=instance).execute()
 
 def delete_instance(data, compute):
-    print("delete")
     project = data['project']
     zone = data['zone']
     instance = data['instance']
@@ -125,7 +122,6 @@ def create_instance(data, compute):
 
 def manage_instance(data):
     compute = googleapiclient.discovery.build('compute', 'v1').instances()
-    print(data['action'])
     return {
         'start': start_instance,
         'stop': stop_instance,
