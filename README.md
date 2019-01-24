@@ -28,7 +28,7 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
                 "boot": "true",
                 "autoDelete": "true",
                 "initializeParams": {
-                    "sourceImage": "projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts",
+                    "sourceImage": "projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts"
                 }
             }
         ],
