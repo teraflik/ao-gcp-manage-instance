@@ -17,11 +17,11 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
 ```json
 {
     "action": "create",
-    "project": "quantiphi-rtc",
-    "zone": "asia-south1-c",
+    "project": "athenas-owl-dev",
+    "zone": "us-central1-c",
     "config": {
-        "name": "instance-2",
-        "machineType": "machineTypes/f1-micro",
+        "name": "i-ao-intern-deploy-destroy",
+        "machineType": "zones/us-central1-c/machineTypes/f1-micro",
 
         "disks": [
             {
@@ -33,25 +33,46 @@ Refer [Google Cloud Method: instance.insert()](https://cloud.google.com/compute/
             }
         ],
 
-        "networkInterfaces": [{
-            "network": "global/networks/default",
-            "accessConfigs": [
-                {"type": "ONE_TO_ONE_NAT", "name": "External NAT"}
-            ]
+        "networkInterfaces": [
+            {
+                "network": "global/networks/default",
+                "accessConfigs": [
+                    {
+                        "type": "ONE_TO_ONE_NAT", 
+                        "name": "External NAT"
+                    }
+                ]
+            }
+        ],
+
+        "serviceAccounts": [{
+        "email": "default",
+        "scopes": [
+        "https://www.googleapis.com/auth/devstorage.read_write",
+        "https://www.googleapis.com/auth/logging.write",
+	"https://www.googleapis.com/auth/pubsub"
+        ]
         }],
-        
-        
+
         "metadata": {
-            "items": [{
-                "key": "office-time",
-                "value": "mumbai-12"
-            }, {
-                "key": "estimate",
-                "value": "2019-01-18"
-            }, {
-                "key": "email",
-                "value": "john.doe@anonymous.com"
-            }]
+            "items": [
+                {
+                    "key": "office-time",
+                    "value": "mumbai-12"
+                },
+                {
+                    "key": "estimate",
+                    "value": "2019-02-10"
+                },
+                {
+                    "key": "email",
+                    "value": "john.doe@anonymous.com"
+                },
+                {
+                    "key": "startup-script-url",
+                    "value": "https://storage.googleapis.com/b-ao-intern-test2/startup-script.sh"
+                }
+            ]
         }
     }
 }
